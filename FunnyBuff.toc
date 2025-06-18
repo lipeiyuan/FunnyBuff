@@ -1,7 +1,7 @@
 ## Interface: 110105
 ## Title: FunnyBuff - custom your buff/debuff in default raid/party UI
 ## Author: 爱吃猫的鱼
-## Version: 1.0
+## Version: 1.1
 ## Notes: custom your buff/debuff in default raid/party UI
 ## DefaultState: Enabled
 ## SavedVariables: FunnyBuffDB
