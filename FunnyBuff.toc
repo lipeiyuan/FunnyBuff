@@ -2,10 +2,14 @@
 ## Title: FunnyBuff - custom your buff/debuff in default raid/party UI
 ## Author: 爱吃猫的鱼
 ## Version: 1.0
-## Nodes: custom your buff/debuff in default raid/party UI
+## Notes: custom your buff/debuff in default raid/party UI
 ## DefaultState: Enabled
+## SavedVariables: FunnyBuffDB
 
 Libs\LibStub\LibStub.lua
 Libs\LibDispel\LibDispel.lua
 
+config.lua
+settings.lua
+commands.lua
 main.lua

@@ -1,42 +1,56 @@
 # FunnyBuff
 
-一个用于魔兽世界团队框架的buff/debuff显示增强插件。
+自定义团队/小队界面的buff/debuff显示插件。
 
-## 功能特点
+## 功能特性
 
-- 突出显示可驱散的debuff
-- 自动调整可驱散debuff的图标大小
-- 显示可驱散debuff的剩余时间
-- 支持自定义显示效果
+- 自动放大显示可驱散的debuff图标
+- 显示倒计时数字
+- 可自定义的图标和字体缩放
+- 可设置最小剩余时间阈值
+- 支持图形界面配置
 
 ## 安装方法
 
-1. 下载最新版本的插件
-2. 将解压后的 `FunnyBuff` 文件夹复制到魔兽世界的插件目录：
-   - 国服：`World of Warcraft\_retail_\Interface\AddOns\`
-   - 美服：`World of Warcraft\_retail_\Interface\AddOns\`
-3. 启动游戏，在角色选择界面确保插件已启用
+1. 下载插件文件
+2. 将 `FunnyBuff` 文件夹放入 `World of Warcraft/_retail_/Interface/AddOns/` 目录
+3. 重启游戏或重载界面
 
-## 配置选项
+## 配置方法
 
-插件提供了以下可配置选项：
+### 图形界面设置
 
-- `DISPELLABLE_DEBUFF_ICON_SCALE`: 可驱散debuff图标缩放比例（默认：1.4）
-- `DISPELLABLE_DEBUFF_FONT_SCALE`: 可驱散debuff倒计时字体缩放比例（默认：1.0）
-- `DISPELLABLE_DEBUFF_MIN_SECOND`: 可驱散debuff最小剩余时间阈值（默认：0）
+1. 在聊天框中输入 `/funnybuff` 或 `/fb` 打开设置窗口
+2. 在弹出的设置窗口中调整以下设置：
+   - **图标缩放**: 控制可驱散debuff图标的大小 (0.1-3.0)，数值越大图标越大
+   - **字体缩放**: 控制倒计时数字的大小 (0.5-3.0)，数值越大字体越小
+   - **最小时间**: 只有剩余时间大于此值的debuff才会放大显示 (0-60秒，整数)
+3. 点击"重置"可恢复默认值
+4. 点击"关闭"关闭设置窗口
 
-## 依赖项
+## 命令
 
-- LibStub
-- LibDispel-1.0
+- `/funnybuff` 或 `/fb` - 打开设置窗口
 
-## 许可证
+## 默认设置
 
-本项目采用 MIT 许可证。详见 [LICENSE](https://github.com/lipeiyuan/FunnyBuff?tab=MIT-1-ov-file) 文件。
+- 图标缩放: 1.4
+- 字体缩放: 1.0
+- 最小时间: 0秒
+
+## 兼容性
+
+- 支持魔兽世界10.1.5及以上版本
+- 兼容默认的团队/小队界面
+- 需要LibDispel库支持
 
 ## 作者
 
-- 爱吃猫的鱼
+爱吃猫的鱼
+
+## 许可证
+
+详见LICENSE文件
 
 ## 贡献
 
@@ -46,4 +60,9 @@
 
 ### v1.0
 - 初始版本发布
-- 实现基本的debuff显示增强功能 
+- 实现基本的debuff显示增强功能
+- 添加配置系统和设置界面
+- 支持图形界面配置
+- 优化界面布局和用户体验
+- 扩展滑块范围，提供更精细的控制
+- 简化命令系统，提升易用性 
