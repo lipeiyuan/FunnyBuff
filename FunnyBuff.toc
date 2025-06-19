@@ -1,4 +1,4 @@
-## Interface: 110105
+## Interface: 110107
 ## Title: FunnyBuff - custom your buff/debuff in default raid/party UI
 ## Author: 爱吃猫的鱼
 ## Version: 1.1
