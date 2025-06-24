@@ -1,5 +1,5 @@
 assert(LibStub, "require LibStub!!!")
-local LibDispel = LibStub:GetLibrary("LibDispel-1.0")
+local LibDispel = LibStub:GetLibrary("LibDispel")
 
 local CreateFrame = CreateFrame
 local hooksecurefunc = hooksecurefunc
@@ -52,7 +52,7 @@ end
 local function set_debuff(debuff_frame, aura)
     if not debuff_frame or not aura then return end
 
-    local dispel_name = fix_dispel_name(aura.dispelName, aura.spellId)
+    local dispel_name = LibDispel:GetDispelType(aura.spellId, aura.dispelName)
     local debuffsize = debuff_frame:GetParent():GetHeight() / 5 + 8
     local now = GetTime()
 
@@ -61,7 +61,7 @@ local function set_debuff(debuff_frame, aura)
     local font_scale = FunnyBuff:GetConfig("DISPELLABLE_DEBUFF_FONT_SCALE")
     local min_second = FunnyBuff:GetConfig("DISPELLABLE_DEBUFF_MIN_SECOND")
 
-    if LibDispel:IsDispellableByMe(dispel_name) and aura.expirationTime - now > min_second then
+    if LibDispel:IsDispelable(debuff_frame:GetParent().displayedUnit, aura.spellId, dispel_name, aura.isHarmful) and aura.expirationTime - now > min_second then
         local font_size = debuff_frame:GetHeight() / font_scale
         local flags = nil -- 控制字体其他外观，比如划线等等，https://warcraft.wiki.gg/wiki/API_FontInstance_SetFont
         debuff_frame.cooldown:GetRegions():SetFont(STANDARD_TEXT_FONT, font_size, flags)
